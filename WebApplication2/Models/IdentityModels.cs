@@ -29,5 +29,7 @@ namespace WebApplication2.Models
         {
             return new ApplicationDbContext();
         }
+
+       public DbSet<T_User_Detail> T_User_Details { get; set; }
     }
 }

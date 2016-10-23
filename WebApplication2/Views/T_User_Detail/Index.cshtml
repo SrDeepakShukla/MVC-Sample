@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    <tr>
+        <td>
+            <input type="text" id="UserID" value="UserID" />
+                           </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Name" value="Name" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Description" value="Description" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <p class="btn btn-default" id="Save" >Save</p>
+        </td>
+    </tr>
+</table>
+
+@section Scripts{
+
+@Scripts.Render("/bundles/jqueryval");
+
+<script>
+
+    $(document).ready(function () {
+        $('#Save').click(function () {
+            var UserId = $('#UserID').val();
+            var Name = $('#Name').val();
+            var Description = $('#Description').val();
+            var details = {
+                UserID: UserId,
+                Name: Name,
+                Description: Description
+            }
+            $.get('/T_User_Detail/SaveDetail',  details , function success(data) {
+                if (data) {
+                    alert('success');
+                }
+                else {
+                    alert('error');                }
+            });
+
+        });
+    });
+
+</script>
+    }

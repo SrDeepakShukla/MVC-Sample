@@ -83,4 +83,9 @@ namespace WebApplication2.Models
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
+    public class MyUsers
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
 }

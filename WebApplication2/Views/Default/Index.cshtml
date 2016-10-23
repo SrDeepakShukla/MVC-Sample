@@ -1,0 +1,24 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Add</h2>
+<div class="container" >
+    <form action="/Default/Index" method="post">
+        <input type="text" name="a" class="form-control" />
+        <input type="text" name="b"class="form-control" />
+        <input type="submit" class="btn-default" value="Submit" />
+        
+    </form>
+
+    <hr />
+    <h1>
+        @if(Model!=null)
+        {
+        <p> Result:@Model</p>
+        }
+        
+      
+    </h1>
+</div>
